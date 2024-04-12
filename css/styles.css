@@ -475,6 +475,7 @@ ol {
   justify-content: center;
   flex-wrap: wrap;
   gap: 72px;
+  width: 320px;
 }
 
 .footer-logo-blue {
@@ -492,9 +493,7 @@ ol {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  width: 264px;
-  height: 72px;
-  font-family: "Roboto", sans-serif;
+  max-width: 264px;
 }
 
 .footer-social {
@@ -519,8 +518,9 @@ ol {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #4d5ae5;
-  display: inline-block;
   margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
 }
 
 .team-icon-group-footer {
@@ -557,12 +557,13 @@ ol {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
 }
 
 .sub-form {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
 }
 .form-text {
   font-weight: 500;
@@ -917,6 +918,7 @@ input::placeholder {
     justify-content: left;
     gap: 72px 24px;
     padding-left: 108px;
+    width: 768px;
   }
   .email-input {
     width: 264px;
@@ -933,6 +935,9 @@ input::placeholder {
   .sub {
     text-align: left;
     display: block;
+  }
+  .link-footer {
+    display: inline-block;
   }
 }
 
@@ -1034,9 +1039,14 @@ input::placeholder {
     margin-right: 120px;
     margin-left: 0;
   }
-
+  .container-footer {
+    width: 1168px;
+  }
   .addr-contact-list.link {
     padding: 24px 0;
     font-size: 14px;
+  }
+  .sub {
+    margin-left: auto;
   }
 }
