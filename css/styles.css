@@ -118,25 +118,21 @@ ol {
   display: flex;
 }
 
-.addr-contact-list.link {
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #434455;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .addr {
   font-style: normal;
   margin-left: auto;
 }
 
 .addr-contact-list .link {
-  font-style: normal;
-  line-height: 150%;
+  display: block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .addr-contact-list .link:hover,
@@ -150,15 +146,11 @@ ol {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-mob@1x.jpeg);
-
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 72px;
-  padding-bottom: 72px;
+    url(../images/people-mob.jpeg);
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
+  background-position: center;
+  padding: 72px 0;
   margin: 0 auto;
 }
 
@@ -858,6 +850,131 @@ input::placeholder {
   cursor: pointer;
 }
 
+@media screen and (max-width: 767px) {
+  .is-open {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .mobile-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .mobile-exit {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 50%;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .mobile-exit:hover,
+  .mobile-exit:focus {
+    border: none;
+    background-color: #404bbf;
+  }
+
+  .mobile-exit:hover > .modal-icon,
+  .mobile-exit:focus > .modal-icon {
+    fill: #ffffff;
+  }
+
+  .mobile-navigation .header-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .mobile-list-link {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11111;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+  }
+
+  .mobile-navigation .header-list-item:first-child {
+    color: #404bbf;
+  }
+
+  .mobile-studio {
+    color: #404bbf;
+  }
+
+  .mobile-navigation .header-list-item:hover,
+  .mobile-navigation .header-list-item:focus {
+    color: #404bbf;
+  }
+
+  .mobile-header-contacts {
+    font-style: inherit;
+  }
+
+  .mobile-modal .header-contacts-list {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 24px;
+  }
+
+  .mobile-modal .header-contacts-link {
+    padding: 0;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    color: #434455;
+  }
+
+  .mobile-modal .header-contacts-item:last-child .header-contacts-link {
+    color: #4d5ae5;
+  }
+
+  .mobile-modal .header-contacts-item:hover .header-contacts-link,
+  .mobile-modal .header-contacts-item:focus .header-contacts-link {
+    color: #4d5ae5;
+  }
+
+  .mobile-modal .social-media-footer {
+    margin-bottom: 0;
+    margin-top: 48px;
+  }
+
+  .mobile-modal .social {
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .mobile-modal .social-media-link {
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #4d5ae5;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
@@ -939,12 +1056,26 @@ input::placeholder {
   .link-footer {
     display: inline-block;
   }
+  .addr-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: end;
+  }
 }
 
 @media screen and (min-width: 1168px) {
   .container {
     width: 1160px;
     padding: 0 15px;
+  }
+  .addr-contact-list {
+    display: flex;
+    flex-direction: inherit;
+    gap: 40px;
+  }
+  .addr-contact-list .link {
+    font-size: 16px;
   }
   .hero {
     background-image: linear-gradient(
