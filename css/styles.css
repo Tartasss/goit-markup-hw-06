@@ -970,14 +970,14 @@ input::placeholder {
   color: #4d5ae5;
 }
 
-.mobile-modal .header-contacts-item:hover .header-contacts-link,
-.mobile-modal .header-contacts-item:focus .header-contacts-link {
-  color: #4d5ae5;
-}
-
 .mobile-modal .social-media-footer {
   margin-bottom: 0;
   margin-top: 48px;
+}
+
+.header-contacts-link:hover,
+.header-contacts-link:focus {
+  color: #4d5ae5;
 }
 
 .mobile-modal .social {
@@ -998,6 +998,10 @@ input::placeholder {
   border-radius: 50%;
   background-color: #4d5ae5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-media-link:hover,
+.social-media-link:focus {
+  background-color: #31d0aa;
 }
 
 .is-open {
