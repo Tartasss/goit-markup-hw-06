@@ -150,7 +150,7 @@ ol {
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url(../images/people-mob.jpeg);
+    url(../images/people-mob.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -865,6 +865,7 @@ input::placeholder {
   padding: 72px 24px 40px 16px;
   z-index: 999;
   pointer-events: auto;
+  visibility: hidden;
 }
 
 .div-soc-con {
@@ -989,13 +990,19 @@ input::placeholder {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.is-open {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
+}
+
 @media screen and (max-width: 767px) {
-  .mobile-overlay {
-    visibility: hidden;
-  }
 }
 
 @media screen and (min-width: 768px) {
+  .mobile-overlay {
+    visibility: hidden;
+  }
   .modal {
     width: 408px;
     min-height: 584px;
@@ -1224,10 +1231,4 @@ input::placeholder {
   .sub {
     margin-left: auto;
   }
-}
-
-.is-open {
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
 }
