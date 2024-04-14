@@ -48,7 +48,10 @@ ol {
 
 .header-container {
   display: flex;
-  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  /* align-items: center; */
+  justify-content: space-between;
 }
 
 .header {
@@ -64,7 +67,7 @@ ol {
 
 .header-list {
   gap: 40px;
-  display: flex;
+  display: none;
 }
 
 .header-logo {
@@ -92,8 +95,8 @@ ol {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-list .link:hover,
-.header-list .link:focus {
+.header-list :hover,
+.header-list :focus {
   color: #404bbf;
 }
 
@@ -121,6 +124,7 @@ ol {
 .addr {
   font-style: normal;
   margin-left: auto;
+  display: none;
 }
 
 .addr-contact-list .link {
@@ -630,16 +634,12 @@ input::placeholder {
   visibility: hidden;
 }
 
-.is-open {
-  pointer-events: auto;
-  visibility: visible;
-  opacity: 1;
-}
-
 .modal {
   border-radius: 4px;
-  width: 408px;
-  min-height: 584px;
+  width: 288px;
+  min-height: 623px;
+  /* width: 408px;
+  min-height: 584px; */
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
   background: #fcfcfc;
@@ -647,7 +647,8 @@ input::placeholder {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 72px 24px 24px 24px;
+  padding: 72px 24px 16px 16px;
+  /* padding: 72px 24px 24px 24px; */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -709,7 +710,7 @@ input::placeholder {
   gap: 4px;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
-  width: 360px;
+  width: 100%;
   height: 40px;
   outline: transparent;
   padding-left: 38px;
@@ -990,16 +991,31 @@ input::placeholder {
 
 @media screen and (max-width: 767px) {
   .mobile-overlay {
-    visibility: visible;
+    visibility: hidden;
   }
 }
 
 @media screen and (min-width: 768px) {
+  .modal {
+    width: 408px;
+    min-height: 584px;
+    padding: 72px 24px 24px 24px;
+  }
+  .header-container {
+    align-items: center;
+  }
+  .mobile-menu-icon {
+    display: none;
+  }
   .mobile-overlay {
     visibility: hidden;
   }
   .container {
     width: 768px;
+  }
+  .header-container {
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
   .hero {
     background-image: linear-gradient(
@@ -1083,6 +1099,12 @@ input::placeholder {
     flex-direction: column;
     gap: 12px;
     align-items: end;
+  }
+  .addr {
+    display: flex;
+  }
+  .header-list {
+    display: flex;
   }
 }
 
@@ -1202,4 +1224,10 @@ input::placeholder {
   .sub {
     margin-left: auto;
   }
+}
+
+.is-open {
+  pointer-events: auto;
+  visibility: visible;
+  opacity: 1;
 }
