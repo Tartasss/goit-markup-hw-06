@@ -41,7 +41,7 @@ ol {
 }
 
 .container {
-  width: 320px;
+  width: 296px;
   padding: 0 16px;
   margin: 0 auto;
 }
@@ -142,6 +142,15 @@ ol {
 .addr-contact-list .link:hover,
 .addr-contact-list .link:focus {
   color: #404bbf;
+}
+
+.button-mob-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  cursor: pointer;
+  border: none;
 }
 
 .hero {
@@ -321,7 +330,6 @@ ol {
   justify-content: center;
   flex-direction: column;
   gap: 72px;
-  margin: 0 13px;
 }
 
 .team-list:not(:last-child) {
@@ -878,18 +886,9 @@ input::placeholder {
   opacity: 0;
 }
 
-.div-soc-con {
+/* .div-soc-con {
   margin: auto;
-}
-
-.mobile-modal {
-  width: 320px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 72px 24px 40px 16px;
-}
+} */
 
 .mobile-exit {
   position: absolute;
@@ -951,26 +950,23 @@ input::placeholder {
   font-style: inherit;
 }
 
-.mobile-modal .header-contacts-list {
-  display: flex;
-  flex-direction: column-reverse;
-  gap: 24px;
-}
-
-.mobile-modal .header-contacts-link {
+.mobile-overlay .header-contacts-link {
   padding: 0;
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
   letter-spacing: 0.02em;
   color: #434455;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 24px;
 }
 
-.mobile-modal .header-contacts-item:last-child .header-contacts-link {
+.mobile-overlay .header-contacts-item:first-child .header-contacts-link {
   color: #4d5ae5;
 }
 
-.mobile-modal .social-media-footer {
+.mobile-overlay .social-media-footer {
   margin-bottom: 0;
   margin-top: 48px;
 }
@@ -980,7 +976,7 @@ input::placeholder {
   color: #4d5ae5;
 }
 
-.mobile-modal .social {
+.mobile-overlay .social {
   justify-content: space-between;
   display: flex;
   align-items: flex-start;
@@ -989,7 +985,7 @@ input::placeholder {
   gap: 40px;
 }
 
-.mobile-modal .social-media-link {
+.mobile-overlay .social-media-link {
   height: 40px;
   width: 40px;
   display: flex;
@@ -1010,9 +1006,6 @@ input::placeholder {
   opacity: 1;
 }
 
-@media screen and (max-width: 767px) {
-}
-
 @media screen and (min-width: 768px) {
   .mobile-overlay {
     visibility: hidden;
@@ -1025,14 +1018,14 @@ input::placeholder {
   .header-container {
     align-items: center;
   }
-  .mobile-menu-icon {
+  .button-mob-menu {
     display: none;
   }
   .mobile-overlay {
     visibility: hidden;
   }
   .container {
-    width: 768px;
+    width: 584px;
   }
   .header-container {
     padding-top: 0px;
@@ -1081,7 +1074,6 @@ input::placeholder {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 72px 24px;
-    margin: 0 108px;
   }
   .team-item {
     width: calc((100% - 24px) / 2);
@@ -1104,8 +1096,7 @@ input::placeholder {
     flex-wrap: wrap;
     justify-content: left;
     gap: 72px 24px;
-    padding-left: 108px;
-    width: 768px;
+    width: 584px;
   }
   .email-input {
     width: 264px;
@@ -1140,9 +1131,9 @@ input::placeholder {
   }
 }
 
-@media screen and (min-width: 1168px) {
+@media screen and (min-width: 1158px) {
   .container {
-    width: 1160px;
+    width: 1158px;
     padding: 0 15px;
   }
   .addr-contact-list {
